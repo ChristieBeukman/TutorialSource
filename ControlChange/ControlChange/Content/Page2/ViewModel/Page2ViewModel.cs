@@ -9,7 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace ControlChange.Content.Page2.ViewModel
 {
-    class Page2ViewModel : ViewModelBase
+    public class Page2ViewModel : ViewModelBase
     {
         public Page2ViewModel()
         {

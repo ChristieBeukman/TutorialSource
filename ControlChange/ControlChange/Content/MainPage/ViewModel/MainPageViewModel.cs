@@ -11,6 +11,7 @@ namespace ControlChange.Content.MainPage.ViewModel
 {
    public class MainPageViewModel : ViewModelBase
     {
+
         public MainPageViewModel()
         {
 
