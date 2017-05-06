@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Windows.Controls;
+using System.Windows;
 using ControlChange.ViewModel;
 
 namespace ControlChange.Content.MainPage.View

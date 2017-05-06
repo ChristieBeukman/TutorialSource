@@ -3,30 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:GalaSoftCommand="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
+        xmlns:Custom="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d ignore"
-        Height="300"
-        Width="300"
-        Title="MVVM Light Application"
+        d:DesignHeight="300"
+        d:DesignWidth="300"
+        Title="MVVM Light Test"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
-    
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-               
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
 
-    <Grid x:Name="LayoutRoot">
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
 
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource Locator}}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TitlePanel"
+                    Grid.Row="0"
+                    Margin="24,24,0,12">
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding ApplicationTitle}"/>
+            <TextBlock x:Name="PageName" Text="{Binding PageName}"
+                       Margin="-0,10,0,0"/>
+        </StackPanel>
+        <Grid x:Name="ContentGrid"
+              Grid.Row="1"
+              Grid.RowSpan="1">   
+        </Grid>
+
+        <Button Content="Page 2"
+                Margin="0"
+                Grid.Row="1"
+                d:LayoutOverrides="Width, Height"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <Custom:Interaction.Triggers></Custom:Interaction.Triggers>
+        </Button>
     </Grid>
 </Window>
