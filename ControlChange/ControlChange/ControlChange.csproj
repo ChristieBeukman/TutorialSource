@@ -71,13 +71,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Content\MainPage\ViewModel\MainPageViewModel.cs" />
+    <Compile Include="Content\Page2\ViewModel\Page2ViewModel.cs" />
+    <Compile Include="Content\Page2\View\Page2View.xaml.cs">
+      <DependentUpon>Page2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Page3\ViewModel\Page3ViewModel.cs" />
+    <Compile Include="Content\Page3\View\Page3View.xaml.cs">
+      <DependentUpon>Page3View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Design\DesignDataService.cs" />
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="Content\MainPage\View\MainPageView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -85,10 +94,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Content\MainPage\View\MainPageView.xaml.cs">
+      <DependentUpon>MainPageView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Content\Page2\View\Page2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Content\Page3\View\Page3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Skins\MainSkin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -122,6 +139,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
